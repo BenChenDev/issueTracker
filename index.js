@@ -1,40 +1,33 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-
+const app = express();
 //import models
 require('./models/Product');
 
+//import routes
+require('./routers/productRoute')(app);
 
-const app = express();
 
 //create admin for DB
-var mongoPort    = '27017'
-var mongoHost    = 'localhost'
-
-var dbName       = 'issueTracker'
-//var userName     = 'admin'
-//var userPassword = 'admin'
-
-//connect to database
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://'+ mongoHost + ':' + mongoPort + '/' + dbName, 
-{
-    useUnifiedTopology:true, 
-    useNewUrlParser:true
-});
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console,'connection error'));
-db.once('open', () => {
+//TODO: get password and user name on sign in page 
+const password = 'admin';
+const userName = 'admin';
+const MongoClient = require('mongodb').MongoClient;
+const uri = `mongodb+srv://${userName}:${password}@cluster0-e8hyg.mongodb.net/test?retryWrites=true&w=majority`;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true});
+client.connect(err => {
+    const collection = client.db("test").collection("devices");
+    // perform actions on the collection object
+    client.close();
+  });
+client.once('open', () => {
     console.log('DB connected.');
 });
 
 app.use(bodyParser.json());
 
-//import routes
-require('./routers/productRoute')(app);
+
 
 //configue project production
 if(process.env.NODE_ENV === 'production'){
