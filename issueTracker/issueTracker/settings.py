@@ -77,10 +77,14 @@ WSGI_APPLICATION = 'issueTracker.wsgi.application'
 #TODO: configue database connection information
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
-        'NAME': os.path.join(BASE_DIR, 'db.splite3'),
+        'ENGINE': 'djongo',
+        'HOST':'mongodb+srv://admin:admin@cluster0-e8hyg.mongodb.net/test?retryWrites=true&w=majority',
+        'NAME':'issueTracker_db',
+        'USER':'admin',
+        'PASSWORD':'admin',
     }
 }
+
 
 
 # Password validation
