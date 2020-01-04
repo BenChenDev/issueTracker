@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h&a297x+v!)krw(-cfo$!!b18e+u^#v3uv4!+07cjnqoxgg^t*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'issueTrackerApp',
     'rest_framework',
+    'issueTrackerApp',
 ]
 
 MIDDLEWARE = [
@@ -75,16 +75,22 @@ WSGI_APPLICATION = 'issueTracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 #TODO: configue database connection information
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'HOST':'mongodb+srv://admin:admin@cluster0-e8hyg.mongodb.net/test?retryWrites=true&w=majority',
+#         'NAME':'issueTracker_db',
+#         'USER':'admin',
+#         'PASSWORD':'admin',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'HOST':'mongodb+srv://admin:admin@cluster0-e8hyg.mongodb.net/test?retryWrites=true&w=majority',
-        'NAME':'issueTracker_db',
-        'USER':'admin',
-        'PASSWORD':'admin',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':os.path.join(BASE_DIR,'db.sqlite3'),
     }
 }
-
 
 
 # Password validation
