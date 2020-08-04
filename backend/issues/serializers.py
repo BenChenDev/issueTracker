@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from issueTrackerApp.models import Issue
+from .models import Issue
 
 #issues serializer
 class IssueSerializer(serializers.ModelSerializer):

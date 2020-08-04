@@ -6,7 +6,7 @@ import sys
 import urllib
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'issueTracker.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'issueManager.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
