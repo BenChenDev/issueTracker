@@ -2,7 +2,7 @@ from .models import Issue;
 from rest_framework import viewsets, permissions;
 from .serializers import IssueSerializer;
 
-# issue tracker viewset 
+# issue viewset 
 class IssueViewSet(viewsets.ModelViewSet):
   queryset = Issue.objects.all()
   permission_classes = [
