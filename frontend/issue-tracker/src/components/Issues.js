@@ -30,7 +30,7 @@ const Issues = (props) => {
     }
     renderItem={item => (
       <List.Item
-        key={item.title}
+        key={item.id}
         actions={[
           <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
           <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
@@ -55,5 +55,5 @@ const Issues = (props) => {
     />
   );
 }
-
+//To-do: design issue list views
 export default Issues;

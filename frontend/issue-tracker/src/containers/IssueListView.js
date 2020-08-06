@@ -34,7 +34,7 @@ class IssueList extends Component {
 
   render() {
     return (
-      <Issues data={listData}/>
+      <Issues data={this.state.issues}/>
     )
   }
 }
