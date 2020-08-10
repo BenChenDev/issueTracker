@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 server dependencies 
 //run: pip list
 pip list
@@ -24,6 +25,10 @@ six                       1.13.0
 sqlparse                  0.2.4
 virtualenv                16.7.9
 wheel                     0.33.6
+=======
+The purpose of this project is:
+  1. Practicing my programming skills on creating a full-stack project, a working web application.
+  2. I am trying to improve my web development skills, so comments about this project will always welcome.
+>>>>>>> master
 
-
-
+The local setup guide will be posted soon.
