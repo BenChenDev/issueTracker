@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+li.ant-list-item{
+  background-color: white;
+  border-bottom: grey;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px darkgray;
+}
