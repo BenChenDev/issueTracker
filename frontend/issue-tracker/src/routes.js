@@ -5,8 +5,8 @@ import IssueDetailView from './containers/IssueDetailView';
 
 const BaseRouter = () => (
   <div>
-    <Route exact path='issues/' component={IssueListView} />
-    <Route exact path='/:issueID' component={IssueDetailView} />
+    <Route exact path='/issues/' component={IssueListView} />
+    <Route exact path='/issue/:issueID' component={IssueDetailView} />
   </div>
 )
 
