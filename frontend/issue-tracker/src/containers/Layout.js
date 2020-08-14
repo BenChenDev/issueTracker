@@ -9,15 +9,12 @@ const CustomLayout = (props) =>{
     <Layout className="layout">
       <Header>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
           <Menu.Item key="1">All Issues</Menu.Item>
           <Menu.Item key="2">Login</Menu.Item>
         </Menu>
       </Header>
       <Content style={{ padding: '0 50px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item><Link to='/'>All Issues</Link></Breadcrumb.Item>
-        </Breadcrumb>
         <div className="site-layout-content">
           {props.children}
         </div>

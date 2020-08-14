@@ -1,12 +1,12 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import IssueList from './containers/IssueListView';
-import IssueDetail from './containers/IssueDetailView';
+import IssueListView from './containers/IssueListView';
+import IssueDetailView from './containers/IssueDetailView';
 
 const BaseRouter = () => (
   <div>
-    <Route exact path='/' component={IssueList} />
-    <Route exact path='/:issueID' component={IssueDetail} />
+    <Route exact path='issues/' component={IssueListView} />
+    <Route exact path='/:issueID' component={IssueDetailView} />
   </div>
 )
 
