@@ -5,7 +5,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import BaseRouter from './routes';
 import CustomLayout from './containers/Layout';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Router >
