@@ -24,8 +24,7 @@ const layout = {
     
 
 const IssueEditForm = () => {
-  const onFinish = values => {
-    console.log(values);
+  const onFinish = values =>{
   };
 
   return (

@@ -8,7 +8,7 @@ const Issues = (props) => {
     size="large"
     pagination={{
       onChange: page => {
-        console.log(page);
+        
       },
       pageSize: 3,
     }}

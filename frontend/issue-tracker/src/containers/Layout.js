@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 
 const { Header, Content, Footer } = Layout;
 
@@ -13,9 +13,16 @@ const CustomLayout = (props) =>{
           <Menu.Item key="1">
             <Link to="/issues">All Issues</Link>
           </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="/login">Login</Link>
-          </Menu.Item>
+          {//do condictional check since we passed the isAuthentication in here
+            props.isAuthenticated ? 
+            <Menu.Item key="2">
+              Logout
+            </Menu.Item>
+            :
+            <Menu.Item key="2">
+              <Link to="/login">Login</Link>
+            </Menu.Item>
+          }
         </Menu>
       </Header>
       <Content style={{ padding: '0 50px' }}>
