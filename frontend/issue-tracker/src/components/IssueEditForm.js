@@ -1,30 +1,30 @@
 import React from 'react';
 import { Form, Input, Button, InputNumber } from 'antd';
 
-const layout = {
-      labelCol: {
-        span: 8,
-      },
-      wrapperCol: {
-        span: 16,
-      },
-    };
+  const layout = {
+    labelCol: {
+      span: 8,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
 
-    const validateMessages = {
-      required: '${label} is required!',
-      types: {
-        email: '${label} is not validate email!',
-        number: '${label} is not a validate number!',
-      },
-      number: {
-        range: '${label} must be between ${min} and ${max}',
-      },
-    };
+  const validateMessages = {
+    required: '${label} is required!',
+    types: {
+      email: '${label} is not validate email!',
+      number: '${label} is not a validate number!',
+    },
+    number: {
+      range: '${label} must be between ${min} and ${max}',
+    },
+  };
     
     
 
-const IssueEditForm = () => {
-  const onFinish = values =>{
+  const IssueEditForm = () => {
+    const onFinish = values =>{
   };
 
   return (
