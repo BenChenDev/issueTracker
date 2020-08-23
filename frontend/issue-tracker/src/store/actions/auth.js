@@ -1,22 +1,22 @@
 import axios from 'axios';
-import * as actionTypt from './actionTypes';
+import * as actionTypes from './actionTypes';
 
 export const authStart = () => {
   return {
-    type: actionTypt.AUTH_START
+    type: actionTypes.AUTH_START
   }
 }
 
 export const authSuccess = (token) => {
   return {
-    type: actionTypt.AUTH_SUCCESS,
+    type: actionTypes.AUTH_SUCCESS,
     token: token
   }
 }
 
 export const authFail = (error) => {
   return {
-    type: actionTypt.AUTH_LOGOUT,
+    type: actionTypes.AUTH_LOGOUT,
     error: error
   }
 }
@@ -77,7 +77,7 @@ export const logout = () => {
   localStorage.removeItem('user');
   localStorage.removeItem('expirationDate');
   return {
-    type: actionTypt.AUTH_LOGOUT
+    type: actionTypes.AUTH_LOGOUT
   }
 }
 

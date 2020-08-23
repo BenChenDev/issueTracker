@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes'
-import {updateObject} from '../utility'
+import { updateObject } from '../utility'
 
 const initialState = {
   token: null,
@@ -8,7 +8,7 @@ const initialState = {
 }
 
 //reducers
-const authStart = (state, action) => {
+const authStart = (state) => {
   return updateObject(state, {
     error: null,
     loading: true
@@ -32,17 +32,20 @@ const authFail = (state, action) => {
 
 const authLogout = (state, action) => {
   return updateObject(state, {
-    token: null
+    token: null,
+    loading: false,
+    error: action.error
   });
 }
 
 //define where these reducers to take place
 const reducer = (state = initialState, action) => {
+  console.log(action);
   switch(action.type){
-    case actionTypes.AUTH_START: return authStart;
-    case actionTypes.AUTH_FAIL: return authFail;
-    case actionTypes.AUTH_SUCCESS: return authSuccess;
-    case actionTypes.AUTH_LOGOUT: return authLogout;
+    case actionTypes.AUTH_START: return authStart(state);
+    case actionTypes.AUTH_FAIL: return authFail(state, action);
+    case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
+    case actionTypes.AUTH_LOGOUT: return authLogout(state, action);
     default:
       return state;
   }

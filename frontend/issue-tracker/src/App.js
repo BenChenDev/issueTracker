@@ -35,7 +35,7 @@ const mapStateToProps = state => {
 }
 
 //methods that need to be pushed into the props of the app
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onTryAutoSignup: () => {
       dispatch(actions.authCheckState());
