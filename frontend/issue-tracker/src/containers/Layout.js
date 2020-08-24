@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
+import '../style/main.scss';
 
 const { Header, Content, Footer } = Layout;
 

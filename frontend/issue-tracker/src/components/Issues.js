@@ -10,7 +10,7 @@ const Issues = (props) => {
       onChange: page => {
         
       },
-      pageSize: 3,
+      pageSize: 8,
     }}
     dataSource={props.data}
     renderItem={item => (

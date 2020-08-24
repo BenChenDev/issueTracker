@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import '../style/issue_list.scss';
 import Issues from '../components/Issues';
 
 class IssueList extends Component {
