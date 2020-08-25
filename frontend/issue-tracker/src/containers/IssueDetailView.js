@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import IssueEditForm from '../components/IssueEditForm';
 import IssueDetail from '../components/IssueDetail';
-
-//import { EditOutlined } from '@ant-design/icons';
 
 class IssueDetailView extends Component {
   
@@ -15,7 +14,7 @@ class IssueDetailView extends Component {
 
   componentDidMount() {
     const id = this.props.match.params.issueID;
-    axios.get(`http://127.0.0.1:8000/issue_tracker/api/issues/${id}`)
+    axios.get(`http://127.0.0.1:8000/issue_tracker/issues/${id}`)
       .then(res => {
         this.setState({
           issue: res.data
@@ -38,4 +37,4 @@ class IssueDetailView extends Component {
   }
 }
 
-export default IssueDetailView;
+export default connect()(IssueDetailView);

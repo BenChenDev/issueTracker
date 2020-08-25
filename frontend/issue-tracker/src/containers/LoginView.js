@@ -19,7 +19,7 @@ class LoginView extends Component {
   };
 
   onFinish = values => {
-    this.props.onAuth(values.userName, values.password);
+    this.props.onAuth(values.username, values.password);
   };
 
   onFinishFailed = errorInfo => {
@@ -47,7 +47,7 @@ class LoginView extends Component {
           this.props.loading ?
           //loading
           <div >
-            <Spin size="latge"/>
+            <Spin size="large"/>
           </div>
 
           :

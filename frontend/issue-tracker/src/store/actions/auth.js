@@ -21,11 +21,11 @@ export const authFail = (error) => {
   }
 }
 
-export const authSignup = (userName, email, password1, password2) => {
+export const authSignup = (username, email, password1, password2) => {
   return dispatch => {
     dispatch(authStart());
-    axios.post('http://127.0.0.1/auth/signup/', {
-      userName: userName,
+    axios.post('http://127.0.0.1:8000/rest-auth/registration/', {
+      username: username,
       email: email,
       password1: password1,
       password2: password2
@@ -44,11 +44,11 @@ export const authSignup = (userName, email, password1, password2) => {
   }
 }
 
-export const authLogin = (userName, password) => {
+export const authLogin = (username, password) => {
   return dispatch => {
     dispatch(authStart());
-    axios.post('http://127.0.0.1/auth/login/', {
-      userName: userName,
+    axios.post('http://127.0.0.1:8000/rest-auth/login/', {
+      username: username,
       password: password
     })
     .then(res => {

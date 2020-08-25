@@ -10,7 +10,7 @@ class IssueList extends Component {
   }
   
   componentDidMount() {
-    axios.get('http://127.0.0.1:8000/issue_tracker/api/issues')
+    axios.get('http://127.0.0.1:8000/issue_tracker/issues')
       .then(res => {
         this.setState({
           issues: res.data
