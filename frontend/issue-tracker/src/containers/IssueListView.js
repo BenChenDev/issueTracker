@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import '../style/issue_list.scss';
 import Issues from '../components/Issues';
+import { connect } from 'react-redux';
 
 class IssueList extends Component {
   
@@ -26,4 +27,10 @@ class IssueList extends Component {
   }
 }
 
-export default IssueList;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.isAuthenticated
+  }
+}
+
+export default connect(mapStateToProps, null)(IssueList);

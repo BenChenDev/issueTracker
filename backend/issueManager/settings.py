@@ -53,6 +53,8 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+AUTH_USER_MODEL = 'IssueTracker.CustomUser'
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
